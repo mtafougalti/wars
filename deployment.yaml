@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: tomcat-war
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: tomcat-war
+    spec:
+      containers:
+      - name: tomcat-war
+        image: mtafougalti/tomcat-war
+        ports:
+        - containerPort: 80
